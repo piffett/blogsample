@@ -21,4 +21,8 @@ class IndexView(PaginationMixin, ListView):
 
 
 class DetailView(generic.ListView):
-    templete_name = 'blog/detail.html'
+    model = Post
+    template_name = 'blog/index.html'
+    paginate_by = 1
+
+

@@ -33,7 +33,7 @@
             {% endfor %}
 
             {% if page_obj.has_next %}
-                <li><a href="{% url 'blog:index' %}?{{ page_obj.next_page_number.querystring }}">next</a></li>
+                <li><a href="{% url 'index' %}?{{ page_obj.next_page_number.querystring }}">next</a></li>
             {% endif %}
         </ul>
     {% endif %}
