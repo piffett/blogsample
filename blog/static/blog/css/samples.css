@@ -100,3 +100,8 @@ pre.highlightjs code {
 	background-color: #5a6268;
 	border-color: #545b62;
 }
+
+.br {
+	display: inline-block;
+	font-weight: bold;
+}
