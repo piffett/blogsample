@@ -17,14 +17,14 @@
   {% if is_paginated %}
         <ul class="pagination">
             {% if page_obj.has_previous %}
-                <li><a href="{% url 'blog:index' %}?{{ page_obj.previous_page_number.querystring }}">previous</a></li>
+                <li><a href="{% url 'index' %}?{{ page_obj.previous_page_number.querystring }}">previous</a></li>
             {% endif %}
             {% for link_page in page_obj.pages %}
                 {% if link_page %}
                     {% if link_page == page_obj.number %}
                         <li class="active"><a href="">{{ link_page }}</a></li>
                     {% else %}
-                        <li><a href="{% url 'blog:index' %}?{{ link_page.querystring  }}">{{ link_page }}</a></li>
+                        <li><a href="{% url 'index' %}?{{ link_page.querystring  }}">{{ link_page }}</a></li>
                     {% endif %}
                 {% else %}
                     {# 省略された部分の表示内容 #}

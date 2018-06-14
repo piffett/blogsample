@@ -20,9 +20,11 @@ class IndexView(PaginationMixin, ListView):
 
 
 
-class DetailView(generic.ListView):
+class DetailView(PaginationMixin, ListView):
     model = Post
     template_name = 'blog/index.html'
-    paginate_by = 1
+    paginate_by = 3
+
+
 
 
