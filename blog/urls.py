@@ -8,6 +8,7 @@ from . import views
 app_name = 'blog'
 urlpatterns = [
     path('top/', views.IndexView.as_view(), name='blog'),
+    path('commenter/', views.CommenterView.as_view(), name='commenter'),
     path('', views.IndexView.as_view(), name='index'),
     path('admin/', admin.site.urls),
     url(r'^', views.DetailView.as_view(), name='detail'),

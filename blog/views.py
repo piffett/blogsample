@@ -4,16 +4,20 @@ from django.views.generic import ListView
 from pure_pagination.mixins import PaginationMixin
 from .models import Post, Commenter, Comment, Admin
 from . import models
+from django.views import generic
 
 
 class IndexView(PaginationMixin, ListView):
-
-    model = Post
-    template_name = 'blog/blog.html'
-    paginate_by = 3
+    template_name = 'blog/login'
 
 
 class DetailView(PaginationMixin, ListView):
+    model = Post
+    template_name = 'blog/index.html'
+    paginate_by = 1
+
+
+class CommenterView(generic.ListView):
     model = Post
     template_name = 'blog/index.html'
     paginate_by = 1
