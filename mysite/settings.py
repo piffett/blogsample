@@ -135,3 +135,9 @@ LOGIN_REDIRECT_URL = 'register:top'
 
 # メールをコンソールに表示する
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'smtp.piffett.com'
+EMAIL_HOST_USER = 'auth'
+EMAIL_HOST_PASSWORD = 'yamada2018'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587

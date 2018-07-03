@@ -16,6 +16,7 @@ from .forms import (
     LoginForm, UserCreateForm, UserUpdateForm, MyPasswordChangeForm,
     MyPasswordResetForm, MySetPasswordForm
 )
+from django.core.mail import send_mail
 
 
 User = get_user_model()
@@ -65,6 +66,12 @@ class UserCreate(generic.CreateView):
         message_template = get_template('register/mail_template/create/message.txt')
         message = message_template.render(context)
 
+        recipient_list = [
+            context["user"],
+        ]
+
+        print(context['user'])
+
         user.email_user(subject, message)
         return redirect('register:user_create_done')
 
@@ -107,7 +114,6 @@ class UserCreateComplete(generic.TemplateView):
                     return super().get(request, **kwargs)
 
         return HttpResponseBadRequest()
-
 
 
 class OnlyYouMixin(UserPassesTestMixin):
