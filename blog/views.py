@@ -7,10 +7,6 @@ from . import models
 from django.views import generic
 
 
-class IndexView(PaginationMixin, ListView):
-    template_name = 'blog/login'
-
-
 class DetailView(PaginationMixin, ListView):
     model = Post
     template_name = 'blog/index.html'
