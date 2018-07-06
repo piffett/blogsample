@@ -9,8 +9,14 @@ from django.views import generic
 
 class DetailView(PaginationMixin, ListView):
     model = Post
-    template_name = 'blog/index.html'
+    template_name = 'blog/blog.html'
     paginate_by = 1
+
+
+class IndexView(PaginationMixin, ListView):
+    model = Post
+    template_name = 'blog/blog.html'
+    paginate_by = 3
 
 
 class CommenterView(generic.ListView):

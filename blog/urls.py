@@ -7,6 +7,8 @@ from . import views
 
 app_name = 'blog'
 urlpatterns = [
+
+    path('', views.IndexView.as_view(), name='index'),
     path('admin/', admin.site.urls),
     url(r'^', views.DetailView.as_view(), name='detail'),
 

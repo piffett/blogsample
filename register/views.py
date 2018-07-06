@@ -66,13 +66,7 @@ class UserCreate(generic.CreateView):
         message_template = get_template('register/mail_template/create/message.txt')
         message = message_template.render(context)
 
-        recipient_list = [
-            context["user"],
-        ]
-
-        print(context['user'])
-
-        user.email_user(subject, message)
+        user.email_user(subject, message, 'auth@rivetter.com')
         return redirect('register:user_create_done')
 
 

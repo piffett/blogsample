@@ -58,7 +58,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,10 +134,10 @@ LOGIN_URL = 'register:login'
 LOGIN_REDIRECT_URL = 'register:top'
 
 # メールをコンソールに表示する
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST = 'smtp.piffett.com'
-EMAIL_HOST_USER = 'auth'
-EMAIL_HOST_PASSWORD = 'yamada2018'
+EMAIL_HOST = 'rivetter.sakura.ne.jp'
+EMAIL_HOST_USER = 'auth@rivetter.sakura.ne.jp'
+EMAIL_HOST_PASSWORD = 'newlygeneratedsecret1'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
